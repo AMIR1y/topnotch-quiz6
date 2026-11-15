@@ -1,0 +1,404 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارگاه خیاطی قلب امیر برای پروانه ❤️</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Vazirmatn for beautiful Persian typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for cute icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti for winning celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        love: {
+                            50: '#fdf4f8',
+                            100: '#fbe8f1',
+                            200: '#f7d3e4',
+                            300: '#f1acd0',
+                            400: '#e875af',
+                            500: '#d94b8e',
+                            600: '#c22f73',
+                            700: '#a3205c',
+                            800: '#871c4c',
+                            900: '#711c42',
+                        },
+                        parvaneh: {
+                            light: '#f3e8ff',
+                            DEFAULT: '#9333ea',
+                            dark: '#581c87',
+                            accent: '#c084fc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 50%, #ffe4e6 100%);
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(147, 51, 234, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
+        }
+        .glow-effect {
+            animation: pulseGlow 3s infinite;
+        }
+        .stamp-border {
+            border: 3px dashed #9333ea;
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen justify-between overflow-x-hidden">
+
+    <!-- Floating Background Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
+        <div class="absolute top-10 right-10 text-4xl text-parvaneh-accent floating">🧵</div>
+        <div class="absolute top-1/4 left-10 text-3xl text-love-400 floating" style="animation-delay: 1s;">💜</div>
+        <div class="absolute bottom-10 right-1/4 text-5xl text-parvaneh-accent floating" style="animation-delay: 2s;">🪡</div>
+        <div class="absolute bottom-1/3 left-1/4 text-3xl text-love-500 floating" style="animation-delay: 1.5s;">✨</div>
+    </div>
+
+    <!-- Header -->
+    <header class="w-full py-6 px-4 text-center relative z-10">
+        <div class="max-w-3xl mx-auto flex items-center justify-center gap-3">
+            <span class="text-3xl">🪡</span>
+            <h1 class="text-2xl md:text-3xl font-black text-purple-900 drop-shadow-sm">کارگاه خیاطی و عشقِ پروانه خانم</h1>
+            <span class="text-3xl">💜</span>
+        </div>
+        <p class="text-sm md:text-base text-slate-600 mt-1">با عشق ساخته شده توسط امیر برای ملکه قلبش</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container mx-auto px-4 py-4 flex-grow flex items-center justify-center relative z-10 max-w-2xl">
+
+        <!-- Welcome / Intro Screen -->
+        <div id="intro-screen" class="glass-panel w-full rounded-3xl p-6 md:p-8 shadow-xl text-center transition-all duration-500">
+            <div class="w-24 h-24 bg-gradient-to-tr from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-5xl shadow-lg glow-effect">
+                🦋
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-purple-900 mb-3">سلام پروانه عزیزِ دلِ امیر! 👋</h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                به کارگاه خیاطی دل ما خوش آمدید! برای اینکه حکم رسمی و مهم‌ترین اطلاعیه «دیوان عالی قلب امیر» صادر بشه، اول باید ۳ تا چالش خیاطی کوچولو و جذاب رو با موفقیت پشت سر بذاری! آماده‌ای؟
+            </p>
+            <button onclick="startMiniGames()" class="w-full md:w-auto px-8 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mx-auto">
+                <span>شروع چالش‌های خیاطی</span>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </div>
+
+        <!-- Mini-Game Container (Hidden initially) -->
+        <div id="game-container" class="glass-panel w-full rounded-3xl p-6 md:p-8 shadow-xl hidden transition-all duration-500">
+            <!-- Progress Bar -->
+            <div class="mb-6">
+                <div class="flex justify-between text-xs font-semibold text-purple-800 mb-1">
+                    <span id="step-title">مرحله ۱ از ۳: نخ کردن سوزن</span>
+                    <span id="step-percent">۳۳٪</span>
+                </div>
+                <div class="w-full bg-purple-100 h-3 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-gradient-to-r from-purple-600 to-pink-500 h-full w-1/3 transition-all duration-500 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Game Step 1: Threading the Needle -->
+            <div id="step-1" class="game-step space-y-6">
+                <div class="text-center">
+                    <h3 class="text-lg font-bold text-purple-900">چالش اول: نخ کردن سوزن طلایی 🪡</h3>
+                    <p class="text-slate-600 text-sm mt-1">روی سوزن کلیک کن تا نخِ رنگی از سوراخش رد بشه!</p>
+                </div>
+                <div class="h-48 bg-purple-50/70 border-2 border-dashed border-purple-200 rounded-2xl flex flex-col items-center justify-center relative cursor-pointer select-none" onclick="completeStep(1)">
+                    <div id="needle-icon" class="text-6xl transform rotate-45 transition-transform duration-300">🪡</div>
+                    <div id="thread-line" class="absolute w-1 h-20 bg-pink-500 rounded-full bottom-2 scale-y-0 origin-bottom transition-transform duration-300"></div>
+                    <p id="needle-hint" class="mt-4 text-xs text-purple-700 font-medium bg-white/80 px-3 py-1.5 rounded-full shadow-sm animate-pulse">برای نخ کردن اینجا ضربه بزن!</p>
+                </div>
+            </div>
+
+            <!-- Game Step 2: Sewing Buttons -->
+            <div id="step-2" class="game-step space-y-6 hidden">
+                <div class="text-center">
+                    <h3 class="text-lg font-bold text-purple-900">چالش دوم: دوختن دکمه قلبی 🔘</h3>
+                    <p class="text-slate-600 text-sm mt-1">روی دکمه کلیک کن تا ۴ کوک زیبا برای محکم شدن دکمه بزنی!</p>
+                </div>
+                <div class="h-48 bg-purple-50/70 border-2 border-dashed border-purple-200 rounded-2xl flex flex-col items-center justify-center relative">
+                    <div class="relative cursor-pointer" onclick="stitchButton()">
+                        <div class="w-20 h-20 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full flex items-center justify-center shadow-md transform hover:scale-105 transition-transform">
+                            <span class="text-white text-2xl font-bold">♥</span>
+                        </div>
+                        <!-- Stitch marks -->
+                        <div id="stitch-1" class="absolute inset-0 border-2 border-dashed border-white rounded-full opacity-0 transition-opacity"></div>
+                    </div>
+                    <p class="mt-4 text-xs text-purple-700 font-medium bg-white/80 px-3 py-1.5 rounded-full shadow-sm">
+                        کوک‌های زده شده: <span id="stitch-count" class="font-bold text-pink-600">۰</span> از ۴
+                    </p>
+                </div>
+            </div>
+
+            <!-- Game Step 3: Pattern Matching / Fabric Cutting -->
+            <div id="step-3" class="game-step space-y-6 hidden">
+                <div class="text-center">
+                    <h3 class="text-lg font-bold text-purple-900">چالش سوم: جور کردن الگوها ✂️</h3>
+                    <p class="text-slate-600 text-sm mt-1">تکه‌های پارچه طرح‌دار رو لمس کن تا در جای درست خودشون قرار بگیرن!</p>
+                </div>
+                <div class="bg-purple-50/70 border-2 border-dashed border-purple-200 rounded-2xl p-4 flex flex-col items-center justify-center gap-4">
+                    <div class="flex gap-3 justify-center" id="fabric-container">
+                        <button onclick="selectFabric(this, 1)" class="fabric-btn px-4 py-3 bg-white border-2 border-purple-300 rounded-xl shadow-sm text-sm font-bold text-purple-900 hover:bg-purple-100 transition-all flex items-center gap-2">
+                            <span>🌸</span> پارچه گل‌گلی
+                        </button>
+                        <button onclick="selectFabric(this, 2)" class="fabric-btn px-4 py-3 bg-white border-2 border-purple-300 rounded-xl shadow-sm text-sm font-bold text-purple-900 hover:bg-purple-100 transition-all flex items-center gap-2">
+                            <span>💜</span> پارچه بنفش
+                        </button>
+                        <button onclick="selectFabric(this, 3)" class="fabric-btn px-4 py-3 bg-white border-2 border-purple-300 rounded-xl shadow-sm text-sm font-bold text-purple-900 hover:bg-purple-100 transition-all flex items-center gap-2">
+                            <span>✨</span> پارچه ستاره‌ای
+                        </button>
+                    </div>
+                    <p id="fabric-hint" class="text-xs text-purple-700 font-medium bg-white/80 px-3 py-1.5 rounded-full shadow-sm">هر ۳ تکه پارچه رو برای کامل شدن لباس انتخاب کن (۰/۳)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Official Decree / Winning Screen (Hidden initially) -->
+        <div id="win-screen" class="glass-panel w-full rounded-3xl p-6 md:p-8 shadow-2xl hidden transition-all duration-700 transform scale-95 opacity-0 border-4 border-purple-400">
+            <div class="text-center mb-6">
+                <div class="inline-block p-3 bg-purple-100 rounded-full text-purple-600 text-3xl mb-2 animate-bounce">
+                    👑
+                </div>
+                <h2 class="text-xl md:text-2xl font-black text-purple-900">پرواز موفقیت! چالش‌های خیاطی تموم شد!</h2>
+                <p class="text-xs md:text-sm text-purple-600 mt-1">حالا وقت صدور حکم رسمی است...</p>
+            </div>
+
+            <!-- The Official Decree Box -->
+            <div class="bg-white/90 rounded-2xl p-5 md:p-6 shadow-inner stamp-border space-y-4 text-right text-slate-700 text-sm md:text-base leading-relaxed relative overflow-hidden">
+                <!-- Watermark heart -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none text-9xl text-purple-600 select-none">💜</div>
+
+                <div class="text-center font-bold text-purple-900 text-base md:text-lg border-b border-purple-100 pb-3">
+                    🚨 اطلاعیه رسمی از طرف دیوان عالی قلب امیر 🚨
+                </div>
+
+                <p class="font-bold text-pink-600">سرکار خانم پروانه ❤️</p>
+                <p>به اطلاع می‌رساند پس از بررسی‌های فراوان، قلب اینجانب تصمیمات زیر را اتخاذ نموده است:</p>
+
+                <div class="space-y-3 pr-2 text-xs md:text-sm">
+                    <div class="flex items-start gap-2">
+                        <span class="font-bold text-purple-700">۱.</span>
+                        <p>خنداندن شما از وظایف دائمی اینجانب محسوب می‌شود.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="font-bold text-purple-700">۲.</span>
+                        <p>شنیدن غرغرها، شیطنت‌ها و داستان‌های روزانه شما هیچ محدودیتی ندارد.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="font-bold text-purple-700">۳.</span>
+                        <p>شما حق دارید هر وقت دلتان گرفت، بدون هیچ توضیحی به من پناه بیاورید.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="font-bold text-purple-700">۴.</span>
+                        <p>در آینده، یک عالمه قرار دونفره، خوراکی خوشمزه، عکس یادگاری و خاطره قشنگ برایمان ثبت خواهد شد.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="font-bold text-purple-700">۵.</span>
+                        <p>اینجانب متعهد می‌شوم حتی در روزهای سخت هم برای ساختن لبخند روی لب شما تلاش کنم.</p>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-purple-100 text-center font-bold text-purple-900 text-sm md:text-base bg-purple-50/50 p-3 rounded-xl">
+                    و اما مهم‌ترین بند این قرارداد:<br>
+                    <span class="text-pink-600 text-base md:text-lg mt-1 inline-block">قلب امیر رسماً و بدون امکان اعتراض، طرفدار شماره یک خانم پروانه است. 👀💜</span>
+                </div>
+            </div>
+
+            <!-- Action buttons after winning -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <button onclick="triggerCelebrationAgain()" class="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart text-pink-300"></i>
+                    <span>جشن دوباره!</span>
+                </button>
+                <button onclick="resetGame()" class="flex-1 py-3 bg-pink-100 hover:bg-pink-200 text-pink-700 font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>تکرار بازی</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-4 text-center text-xs text-slate-500 relative z-10">
+        <p>با تمام عشق برای پروانه عزیزم - همیشه و هرجا 💜</p>
+    </footer>
+
+    <!-- Game Logic Script -->
+    <script>
+        let currentStep = 1;
+        let stitchCounter = 0;
+        let selectedFabricsCount = 0;
+
+        function startMiniGames() {
+            document.getElementById('intro-screen').classList.add('hidden');
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.classList.remove('hidden');
+        }
+
+        // Step 1: Thread the needle
+        function completeStep(stepNum) {
+            if (stepNum === 1) {
+                const threadLine = document.getElementById('thread-line');
+                const needleHint = document.getElementById('needle-hint');
+                const needleIcon = document.getElementById('needle-icon');
+
+                threadLine.style.transform = 'scaleY(1)';
+                needleIcon.classList.add('translate-y-2');
+                needleHint.textContent = 'آفرین! سوزن با موفقیت نخ شد ✨';
+                needleHint.classList.remove('animate-pulse');
+                needleHint.classList.add('text-green-600');
+
+                setTimeout(() => {
+                    transitionToStep(2);
+                }, 1200);
+            }
+        }
+
+        // Step 2: Stitch button
+        function stitchButton() {
+            stitchCounter++;
+            const stitchCountElem = document.getElementById('stitch-count');
+            stitchCountElem.textContent = stitchCounter;
+
+            if (stitchCounter === 1) {
+                document.getElementById('stitch-1').style.opacity = '1';
+            }
+
+            if (stitchCounter >= 4) {
+                setTimeout(() => {
+                    transitionToStep(3);
+                }, 600);
+            }
+        }
+
+        // Step 3: Fabric matching
+        function selectFabric(btn, id) {
+            if (btn.classList.contains('bg-purple-600')) return; // already selected
+
+            btn.classList.remove('bg-white', 'border-purple-300', 'text-purple-900');
+            btn.classList.add('bg-purple-600', 'border-purple-600', 'text-white', 'shadow-md', 'scale-105');
+            
+            selectedFabricsCount++;
+            document.getElementById('fabric-hint').textContent = `تکه‌های انتخاب شده: (${selectedFabricsCount}/۳)`;
+
+            if (selectedFabricsCount === 3) {
+                document.getElementById('fabric-hint').textContent = 'عالی بود! الگوها کامل شدند 🎉';
+                document.getElementById('fabric-hint').classList.add('text-green-600', 'font-bold');
+
+                setTimeout(() => {
+                    showWinScreen();
+                }, 1000);
+            }
+        }
+
+        function transitionToStep(nextStep) {
+            currentStep = nextStep;
+            
+            // Hide all steps
+            document.querySelectorAll('.game-step').forEach(el => el.classList.add('hidden'));
+            
+            // Show target step
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+            // Update progress bar
+            const percent = currentStep === 2 ? '۶۶٪' : '۱۰۰٪';
+            const widthVal = currentStep === 2 ? '66%' : '100%';
+            const titleText = currentStep === 2 ? 'مرحله ۲ از ۳: دوختن دکمه قلبی' : 'مرحله ۳ از ۳: جور کردن الگوها';
+
+            document.getElementById('step-title').textContent = titleText;
+            document.getElementById('step-percent').textContent = percent;
+            document.getElementById('progress-bar').style.width = widthVal;
+        }
+
+        function showWinScreen() {
+            document.getElementById('game-container').classList.add('hidden');
+            const winScreen = document.getElementById('win-screen');
+            winScreen.classList.remove('hidden');
+            
+            // Trigger animation
+            setTimeout(() => {
+                winScreen.classList.remove('scale-95', 'opacity-0');
+            }, 50);
+
+            triggerCelebration();
+        }
+
+        function triggerCelebration() {
+            // Confetti explosion with love theme colors
+            confetti({
+                particleCount: 120,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#9333ea', '#d94b8e', '#f472b6', '#c084fc', '#ffffff']
+            });
+        }
+
+        function triggerCelebrationAgain() {
+            triggerCelebration();
+        }
+
+        function resetGame() {
+            currentStep = 1;
+            stitchCounter = 0;
+            selectedFabricsCount = 0;
+
+            // Reset UI states
+            document.getElementById('thread-line').style.transform = 'scaleY(0)';
+            document.getElementById('needle-icon').classList.remove('translate-y-2');
+            document.getElementById('needle-hint').textContent = 'برای نخ کردن اینجا ضربه بزن!';
+            document.getElementById('needle-hint').classList.remove('text-green-600');
+            document.getElementById('needle-hint').classList.add('animate-pulse');
+
+            document.getElementById('stitch-count').textContent = '۰';
+            document.getElementById('stitch-1').style.opacity = '0';
+
+            // Reset fabric buttons
+            document.querySelectorAll('.fabric-btn').forEach(btn => {
+                btn.classList.remove('bg-purple-600', 'border-purple-600', 'text-white', 'shadow-md', 'scale-105');
+                btn.classList.add('bg-white', 'border-purple-300', 'text-purple-900');
+            });
+            document.getElementById('fabric-hint').textContent = 'هر ۳ تکه پارچه رو برای کامل شدن لباس انتخاب کن (۰/۳)';
+            document.getElementById('fabric-hint').classList.remove('text-green-600', 'font-bold');
+
+            // Reset progress bar
+            document.getElementById('step-title').textContent = 'مرحله ۱ از ۳: نخ کردن سوزن';
+            document.getElementById('step-percent').textContent = '۳۳٪';
+            document.getElementById('progress-bar').style.width = '33%';
+
+            // Show intro screen
+            document.getElementById('win-screen').classList.add('hidden', 'scale-95', 'opacity-0');
+            document.getElementById('intro-screen').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+```
